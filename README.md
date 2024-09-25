@@ -41,25 +41,27 @@ Este é um gerenciador de produtos desenvolvido em PHP, utilizando SQLite como b
    cd seu-repositorio
   ```
 3. Abra o arquivo index.php em um servidor web ou localmente através de um servidor PHP embutido:
+```
   php -S localhost:8000
+```
 
 ## Estrutura do Código 
 
-/seu-repositorio
-│
-├── /src
-│   ├── Database.php \n
-│   ├── Produtos.db
-│   ├── Product.php
-│   ├── index.php
-│   ├── style.css
-│   ├── script.js
-│   └── Log.php
-│
-├── Vendor
-│   ├── Composer
-│   └── autoload.php
-└── composer.json
+/seu-repositorio  
+│  
+├── /src  
+│   ├── Database.php   
+│   ├── Produtos.db  
+│   ├── Product.php  
+│   ├── index.php  
+│   ├── style.css  
+│   ├── script.js  
+│   └── Log.php  
+│  
+├── Vendor  
+│   ├── Composer  
+│   └── autoload.php  
+└── composer.json  
 
 ## Endpoints
 
