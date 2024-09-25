@@ -48,7 +48,7 @@ Este é um gerenciador de produtos desenvolvido em PHP, utilizando SQLite como b
 /seu-repositorio
 │
 ├── /src
-│   ├── Database.php
+│   ├── Database.php \n
 │   ├── Produtos.db
 │   ├── Product.php
 │   ├── index.php
