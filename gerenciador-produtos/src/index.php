@@ -7,6 +7,8 @@ $db = new Database('produtos.db');
 $product = new Product($db);
 $log = new Log($db);
 
+error_reporting(0);
+
 // Roteamento
 require_once 'routes.php';
 ?>
