@@ -1,0 +1,618 @@
+:root {
+    --color1: rgb(0, 255, 157); /* Verde claro */
+    --color2: rgb(0, 255, 221); /* Azul claro */
+    --color3: rgba(0, 102, 255, 1); /* Azul escuro */
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.5);
+    outline: none;
+    font-size: 1rem;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Esconde o overflow para as animações */
+}
+
+#sectionsContainer {
+    position: relative;
+    width: 300dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.text-button {
+    font-size: 5.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.1);
+    transition: background-position 0.6s cubic-bezier(0.77, 0, 0.175, 1), transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), text-shadow 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.text-button:nth-child(1) {
+    background: linear-gradient(90deg, var(--color1) 50%, rgba(0,0,0,0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.text-button:nth-child(2) {
+    background: linear-gradient(90deg, var(--color2) 50%, rgba(0,0,0,0) 50%);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.text-button:nth-child(3) {
+    background: linear-gradient(0deg, rgba(0,0,0,0) 50%, var(--color3) 50%);
+    background-size: 100% 200%;
+    background-position: 0 -100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.text-button:hover {
+    background-position: 0 0;
+}
+
+.text-button:nth-child(1):hover {
+    transform: translateX(-10%);
+    text-shadow: 0 0 7px rgba(0, 255, 157, 0.6);
+}
+
+.text-button:nth-child(2):hover {
+    transform: translateX(10%);
+    text-shadow: 0 0 7px rgba(0, 255, 221, 0.6);
+}
+
+.text-button:nth-child(3):hover {
+    transform: translateY(10%);
+    text-shadow: 0 0 7px rgba(0, 102, 255, 0.6);
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+}
+
+#inserirSection {
+    left: 100vw;
+}
+
+#produtosSection {
+    left: -100vw;
+}
+
+#auditoriaSection {
+    left: 0;
+    top: 100vh;
+}
+
+.backButton {
+    position: absolute;
+    top: 40px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#produtosSection .backButton {
+    right: 60px;
+}
+
+#inserirSection .backButton {
+    left: 60px;
+}
+
+#auditoriaSection .backButton {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.produtos-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 70%;
+    height: 60%; /* Limita a altura da lista de produtos */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.produtos-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.produtos-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.produtos-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.produtos-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Altera a cor do thumb ao passar o mouse */
+}
+
+.showElemento-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Muda para coluna */
+    justify-content: center;
+    align-items: flex-start; /* Alinha à esquerda */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Adicionado para posicionar a seta */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1rem; /* Tamanho da fonte dos itens do produto */
+    font-weight: 300; /* Peso da fonte mais leve */
+}
+
+.showElemento-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.showElemento-detalhes {
+    display: none;
+    margin-top: 10px;
+    padding: 30px 10px 10px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%; /* Garante que ocupa toda a largura */
+    animation: expand 0.3s ease-out; /* Animação para expandir */
+}
+
+@keyframes expand {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+@keyframes collapse {
+    from {
+        max-height: 500px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+.seta {
+    position: absolute;
+    right: 15px; /* Posiciona a seta na extrema direita */
+    top: 15px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+}
+
+.showElemento-item.expanded .seta {
+    transform: rotate(90deg);
+}
+
+.showElemento-item.expanded:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Mantém o fundo ao expandir */
+    transform: scale(1.01);
+}
+
+.alterar-button {
+    position: absolute;
+    bottom: 15px; /* Distância do fundo */
+    right: 15px; /* Distância da direita */
+    border-radius: 25px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, var(--color1) 50%, rgba(0,0,0,0) 50%);
+    background-size: 230% 100%;
+    background-position: -80% 0;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-position 0.6s cubic-bezier(0.77, 0, 0.175, 1), transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.alterar-button:hover {
+    background-position: 0 0;
+    color: white;
+    transform: scale(1.05); /* Efeito de leve aumento no hover */
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixo na tela */
+    z-index: 1000; /* Na frente de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilita scroll se necessário */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+}
+
+.modal-content {
+    background-color: #1c1c1c; /* Cor de fundo do modal */
+    margin: 15% auto; /* Espaço no topo e centralização */
+    padding: 30px;
+    border: 1px solid #888; /* Borda do modal */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 50%; /* Largura do modal */
+    color: #fff; /* Cor do texto */
+}
+
+.modal-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#editProductForm {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.close-button {
+    color: #aaa; /* Cor do botão de fechar */
+    font-size: 28px; /* Tamanho do botão de fechar */
+    font-weight: bold; /* Negrito */
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff; /* Cor ao passar o mouse */
+    text-decoration: none; /* Sem sublinhado */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+
+.logs-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 70%;
+    height: 60%; /* Limita a altura da lista de logs */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logs-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.logs-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.logs-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.logs-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Altera a cor do thumb ao passar o mouse */
+}
+
+#inserirContainer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 60%;
+    height: 70%;
+}
+
+#inserirContainer label {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    transform: translate(0, 6px);
+    width: 100%;
+}
+
+#inserirContainer input, 
+#inserirContainer textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+#inserirContainer input:hover,
+#inserirContainer textarea:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Cor ao passar o mouse */
+}
+
+.inserir-button {
+    margin-top: 40px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, var(--color1) 50%, rgba(0,0,0,0) 50%);
+    background-size: 230% 100%;
+    background-position: -80% 0;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-position 0.6s cubic-bezier(0.77, 0, 0.175, 1), transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.inserir-button:hover {
+    background-position: 0 0;
+    color: white;
+    transform: scale(1.05); /* Efeito de leve aumento no hover */
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.atualizar-button {
+    margin-top: 40px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, var(--color1) 50%, rgba(0,0,0,0) 50%);
+    background-size: 230% 100%;
+    background-position: -80% 0;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-position 0.6s cubic-bezier(0.77, 0, 0.175, 1), transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.atualizar-button:hover {
+    background-position: 0 0;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.excluir-button {
+    margin-top: 40px;
+    border-radius: 25px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, red 50%, rgba(0,0,0,0) 50%);
+    background-size: 230% 100%;
+    background-position: -80% 0;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-position 0.6s cubic-bezier(0.77, 0, 0.175, 1), transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.excluir-button:hover {
+    background-position: 0 0;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte */
+    }
+
+    #menu {
+        flex-direction: column; /* Muda para coluna */
+    }
+
+    .text-button {
+        font-size: 4rem; /* Reduz o tamanho do texto do botão */
+        margin: 15px 0; /* Reduz a margem */
+    }
+
+    #sectionsContainer {
+        width: 200vw; /* Ajusta a largura para tablet */
+    }
+
+    .section {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte das seções */
+    }
+
+    .produtos-container, .logs-container {
+        width: 90%; /* Aumenta a largura */
+        height: 50%; /* Ajusta a altura */
+    }
+
+    #inserirContainer form {
+        width: 80%; /* Ajusta a largura do formulário */
+    }
+
+    #inserirContainer input,
+    #inserirContainer textarea {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte dos inputs */
+    }
+}
+
+/* Para dispositivos móveis */
+@media (max-width: 480px) {
+    html {
+        overflow: hidden;
+    }
+
+    body {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .text-button {
+        font-size: 3rem; /* Reduz ainda mais o tamanho do texto do botão */
+    }
+
+    #sectionsContainer {
+        width: 300vw; /* Mantém a largura, mas será rolável */
+        height: 50dvh;
+    }
+
+    .section {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte das seções */
+    }
+
+    .produtos-container, .logs-container {
+        margin-top: 60px;
+        width: 85%; /* Aumenta a largura */
+        height: 80%; /* Ajusta a altura */
+    }
+
+    #inserirContainer form {
+        width: 90%; /* Ajusta a largura do formulário */
+    }
+
+    #inserirContainer input,
+    #inserirContainer textarea {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte dos inputs */
+    }
+
+    .alterar-button, .inserir-button {
+        font-size: 0.9rem; /* Ajusta o tamanho da fonte dos botões */
+        padding: 8px 16px; /* Reduz o padding */
+    }
+
+    .backButton {
+        font-size: 0.8rem; /* Reduz o tamanho da fonte do botão de voltar */
+        top: 20px;
+    }
+
+    #produtosSection .backButton {
+        right: 20px;
+    }
+    
+    #inserirSection .backButton {
+        left: 20px;
+    }
+    
+    #auditoriaSection .backButton {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .modal {
+        display: none; /* Escondido por padrão */
+        align-items: center;
+        justify-content: center;
+        position: fixed; /* Fixo na tela */
+        z-index: 1000; /* Na frente de outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        overflow: auto; /* Habilita scroll se necessário */
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    }
+    
+    .modal-content {
+        background-color: #1c1c1c; /* Cor de fundo do modal */
+        padding: 30px;
+        border: 1px solid #888; /* Borda do modal */
+        border-radius: 10px; /* Bordas arredondadas */
+        width: 90%; /* Largura do modal */
+        color: #fff; /* Cor do texto */
+    }
+    
+    .modal-top {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    #editProductForm {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    
+    .close-button {
+        color: #aaa; /* Cor do botão de fechar */
+        font-size: 28px; /* Tamanho do botão de fechar */
+        font-weight: bold; /* Negrito */
+        position: absolute;
+        top: 0px;
+        right: 10px;
+    }
+    
+    .close-button:hover,
+    .close-button:focus {
+        color: #fff; /* Cor ao passar o mouse */
+        text-decoration: none; /* Sem sublinhado */
+        cursor: pointer; /* Cursor de ponteiro */
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "pedro-fink/gerenciador-produtos",
+    "description": "Sistema de gerenciamento de produtos",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PedroFink\\GerenciadorProdutos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Fink Silva - FinkDev"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
