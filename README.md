@@ -37,7 +37,8 @@ Este é um gerenciador de produtos desenvolvido em PHP, utilizando SQLite como b
    git clone https://github.com/seu-usuario/seu-repositorio.git
 
 2. Acesse o diretório do projeto:
-  cd seu-repositorio
+  ```bash
+   cd seu-repositorio
 
 3. Abra o arquivo index.php em um servidor web ou localmente através de um servidor PHP embutido:
   php -S localhost:8000
