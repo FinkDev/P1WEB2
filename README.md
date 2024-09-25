@@ -39,6 +39,7 @@ Este é um gerenciador de produtos desenvolvido em PHP, utilizando SQLite como b
 2. Acesse o diretório do projeto:
   ```
    cd seu-repositorio
+   cd src
   ```
 3. Abra o arquivo index.php em um servidor web ou localmente através de um servidor PHP embutido:
 ```
