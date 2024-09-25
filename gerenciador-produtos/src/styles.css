@@ -297,7 +297,7 @@ body {
 
 .modal-content {
     background-color: #1c1c1c; /* Cor de fundo do modal */
-    margin: 15% auto; /* Espaço no topo e centralização */
+    margin: auto; /* Espaço no topo e centralização */
     padding: 30px;
     border: 1px solid #888; /* Borda do modal */
     border-radius: 10px; /* Bordas arredondadas */
