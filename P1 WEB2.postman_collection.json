@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "6a168971-844e-480b-9f02-6f2d3d2dd106",
+		"name": "P1 WEB2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38513950"
+	},
+	"item": [
+		{
+			"name": "GET COMUM",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Cadeira Gamer\",\r\n    \"descricao\": \"Cadeira ergonômica com apoio para cabeça e lombar\",\r\n    \"preco\": 900,\r\n    \"estoque\": 12,\r\n    \"userInsert\": \"AdminUser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/index.php/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"index.php",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET COM ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/index.php/produtos/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"index.php",
+						"produtos",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Produto exemplo\",\r\n    \"descricao\": \"Descrição do produto exemplo\",\r\n    \"preco\": 1.00,\r\n    \"estoque\": 0,\r\n    \"userInsert\": \"Usuário que enviou\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/index.php/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"index.php",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Produto Atualizado\",\r\n    \"descricao\": \"Descrição do produto atualizado\",\r\n    \"preco\": 25.00,\r\n    \"estoque\": 150,\r\n    \"userInsert\": \"Usuário Atualizado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/index.php/produtos/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"index.php",
+						"produtos",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Produto Atualizado\",\r\n    \"descricao\": \"Descrição do produto atualizado\",\r\n    \"preco\": 25.00,\r\n    \"estoque\": 150,\r\n    \"userInsert\": \"Usuário Atualizado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/index.php/produtos/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"index.php",
+						"produtos",
+						"18"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
