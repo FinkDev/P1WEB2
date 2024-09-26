@@ -12,8 +12,6 @@ Este é um gerenciador de produtos desenvolvido em PHP, utilizando SQLite como b
 - [Implementação dos Logs](#implementação-dos-logs)
 - [Validação dos Campos](#validação-dos-campos)
 - [Interface do Usuário](#interface-do-usuário)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
 
 ## Funcionalidades
 
