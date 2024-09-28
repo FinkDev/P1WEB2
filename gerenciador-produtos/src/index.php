@@ -73,7 +73,7 @@ require_once 'routes.php';
             <h2 class="modal-top">Editar Produto</h2>
             <form id="editProductForm">
                 <input type="hidden" id="productId" name="id">
-                <input type="hidden" id="userInsert" name="userInsert">
+                <input type="hidden" id="userInsert" name="userInsert" value="UsuárioPadrão">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
                 <label for="descricao">Descrição:</label>
@@ -83,11 +83,11 @@ require_once 'routes.php';
                 <label for="estoque">Estoque:</label>
                 <input type="number" id="estoque" name="estoque" required>
                 <button type="submit" class="atualizar-button">Salvar</button>
-                <button type="button" class="excluir-button">Excluir</button> <!-- Novo botão de excluir -->
+                <button type="button" class="excluir-button">Excluir</button>
             </form>
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- Adicione seu JS aqui -->
+    <script src="script.js"></script>
 </body>
 </html>
