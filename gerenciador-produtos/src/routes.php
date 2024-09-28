@@ -33,7 +33,7 @@ if ($requestMethod === 'GET') {
 } elseif ($requestMethod === 'DELETE' && count($requestUri) === 2 && $requestUri[0] === 'produtos') {
     $id = intval($requestUri[1]);
     $product->deleteProduct($id);
-    $log->logAction('exclusão', $id, '');
+    $log->logAction('exclusão', $id, $data['userInsert']);
     echo json_encode(['message' => 'Produto deletado com sucesso']);
     exit();
 } else {
