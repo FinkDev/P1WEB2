@@ -1,6 +1,3 @@
-/* styles.css */
-
-/* Variáveis de Cores */
 :root {
     --primary-color: #007bff;
     --secondary-color: #343a40;
@@ -59,31 +56,31 @@ h1, h2 {
 .produtos-container {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaçamento entre os produtos */
+    gap: 10px; 
 }
 
 .produto-card {
-    background-color: #ffffff; /* Fundo branco */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    padding: 15px; /* Espaçamento interno */
-    transition: transform 0.3s; /* Transição suave ao passar o mouse */
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 15px; 
+    transition: transform 0.3s;
 }
 
 .produto-card:hover {
-    transform: translateY(-5px); /* Eleva o produto ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .produto-card h3 {
-    margin: 0; /* Remove a margem do título */
+    margin: 0;
 }
 
 .produto-card p {
-    margin: 5px 0; /* Margem entre os parágrafos */
+    margin: 5px 0; 
 }
 
 .produto-card button {
-    margin-top: 10px; /* Espaçamento acima do botão */
+    margin-top: 10px; 
 }
 
 
@@ -116,19 +113,19 @@ h1, h2 {
 .logs-container {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaçamento entre os logs */
+    gap: 10px;
 }
 
 .log-card {
-    background-color: #ffffff; /* Fundo branco */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    padding: 15px; /* Espaçamento interno */
-    transition: transform 0.3s; /* Transição suave ao passar o mouse */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s;
 }
 
 .log-card:hover {
-    transform: translateY(-5px); /* Eleva o log ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .log-header {
@@ -138,12 +135,12 @@ h1, h2 {
 }
 
 .log-timestamp {
-    font-size: 0.9em; /* Tamanho menor para a data/hora */
-    color: #6c757d; /* Cor cinza para a data/hora */
+    font-size: 0.9em;
+    color: #6c757d;
 }
 
 .log-details p {
-    margin: 5px 0; /* Margem entre os parágrafos */
+    margin: 5px 0;
 }
 
 

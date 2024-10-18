@@ -43,7 +43,7 @@ new Vue({
         },
         showView(view) {
             this.currentView = view;
-            console.log('Current View:', this.currentView); // Para depuração
+            console.log('Current View:', this.currentView);
             if (view === 'produtos') {
                 this.loadProducts();
             } else if (view === 'auditoria') {
@@ -58,8 +58,8 @@ new Vue({
             }, 100);
         },
         closeEditModal() {
-            this.editModalVisible = false; // Fecha o modal de edição
-            this.productToEdit = {}; // Limpa os dados do produto ao fechar
+            this.editModalVisible = false;
+            this.productToEdit = {};
         },
         async updateProduct() {
             try {
@@ -73,8 +73,8 @@ new Vue({
 
                 if (response.ok) {
                     alert('Produto atualizado com sucesso!');
-                    this.closeEditModal(); // Fecha o modal e limpa os dados
-                    this.loadProducts(); // Atualiza a lista
+                    this.closeEditModal();
+                    this.loadProducts();
                 } else {
                     const errorData = await response.json();
                     alert(`Erro ao atualizar produto: ${errorData.error}`);
@@ -129,6 +129,6 @@ new Vue({
         
     },
     mounted() {
-        this.showView('home'); // Inicializa a visualização
+        this.showView('home');
     }
 });
