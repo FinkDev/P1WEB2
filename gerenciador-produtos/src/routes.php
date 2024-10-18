@@ -16,7 +16,7 @@ if ($requestMethod === 'GET') {
         $logs = $log->getAllLogs();
         echo json_encode($logs);
         exit();
-    }
+    }    
 } elseif ($requestMethod === 'POST' && $requestUri[0] === 'produtos') {
     $data = json_decode(file_get_contents("php://input"), true);
     $id = $product->createProduct($data);
